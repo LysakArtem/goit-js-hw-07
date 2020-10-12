@@ -1,11 +1,10 @@
-const inputRef=document.querySelector('#validation-input');
+const inputRef = document.querySelector('#validation-input');
 
-const countValidCharacter =parseInt(inputRef.getAttribute('data-length'));
+const countValidCharacter = parseInt(inputRef.getAttribute('data-length'));
 
-inputRef.addEventListener('blur', handleInputBlur);
-function handleInputBlur(event){
-    const inputValue=event.target.value;
-    if (inputValue.length==countValidCharacter){
+const handleInputBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue.length === countValidCharacter){
         inputRef.classList.remove('invalid');
         inputRef.classList.add('valid');
     }
@@ -14,3 +13,5 @@ function handleInputBlur(event){
         inputRef.classList.add('invalid');
     }
 }
+
+inputRef.addEventListener('blur', handleInputBlur);
